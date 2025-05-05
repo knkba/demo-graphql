@@ -1,14 +1,80 @@
 # Demo de GraphQL y GraphQL Federation
 
-Este proyecto es una demostración práctica y educativa de GraphQL Federation, diseñada para mostrar cómo se pueden conectar múltiples servicios GraphQL independientes en una única API unificada. El demo utiliza un escenario simple pero efectivo con dos servicios: usuarios y productos, que simulan estar distribuidos en diferentes sistemas.
+## Documentación de la POC (Prueba de Concepto)
 
-## Objetivo del Demo
+### Descripción de la Prueba
+Esta POC demuestra la implementación de una arquitectura de microservicios utilizando GraphQL Federation. El objetivo es validar la viabilidad de conectar múltiples servicios GraphQL independientes a través de un gateway central, permitiendo consultas distribuidas y una API unificada. La prueba se centra en dos servicios básicos (usuarios y productos) que simulan estar distribuidos en diferentes sistemas.
 
-El propósito principal de este demo es:
-- Mostrar los conceptos básicos de GraphQL Federation
-- Demostrar cómo los servicios distribuidos pueden compartir datos
-- Ilustrar la resolución de referencias entre servicios
-- Proporcionar ejemplos prácticos de consultas federadas
+### Objetivo(s) de la Prueba
+- Validar la implementación de GraphQL Federation en un entorno de microservicios
+- Demostrar la capacidad de resolver referencias entre servicios distribuidos
+- Verificar la eficiencia de las consultas distribuidas a través del gateway
+- Evaluar la facilidad de mantenimiento y extensibilidad de la arquitectura
+- Comprobar la integración de múltiples servicios GraphQL en una única API
+
+### Pasos Implementados para Llevar a Cabo la Prueba
+1. **Configuración del Entorno**
+   - Creación de la estructura base del proyecto
+   - Configuración de las dependencias necesarias
+   - Establecimiento del entorno de desarrollo
+
+2. **Implementación de Servicios**
+   - Desarrollo del servicio de usuarios con su propio esquema GraphQL
+   - Desarrollo del servicio de productos con su propio esquema GraphQL
+   - Implementación de resolvers específicos para cada servicio
+
+3. **Configuración del Gateway**
+   - Implementación del gateway de GraphQL Federation
+   - Configuración de la federación de servicios
+   - Establecimiento de las reglas de resolución
+
+4. **Pruebas y Validación**
+   - Implementación de consultas de prueba
+   - Validación de la resolución de referencias
+   - Pruebas de rendimiento básicas
+
+### Tecnologías Usadas en la Prueba
+- **Lenguajes de Programación:**
+  - JavaScript/Node.js
+
+- **Frameworks y Librerías:**
+  - Express.js (Framework web)
+  - Apollo Server (Servidor GraphQL)
+  - Apollo Gateway (Implementación de Federation)
+  - Apollo Subgraph (Creación de subgrafos)
+  - GraphQL (Lenguaje de consulta)
+
+- **Herramientas de Desarrollo:**
+  - npm (Gestor de paquetes)
+  - GraphQL Playground (Herramienta de pruebas)
+
+### Resultados
+- **Funcionalidad:**
+  - Implementación exitosa de la federación de servicios
+  - Resolución correcta de referencias entre servicios
+  - API unificada operativa a través del gateway
+
+- **Rendimiento:**
+  - Tiempo de respuesta aceptable para consultas distribuidas
+  - Escalabilidad demostrada en la arquitectura
+  - Manejo eficiente de las referencias entre servicios
+
+- **Mantenibilidad:**
+  - Código modular y bien estructurado
+  - Fácil extensibilidad para nuevos servicios
+  - Documentación clara y completa
+
+### Conclusiones
+- La POC demuestra la viabilidad de implementar GraphQL Federation en un entorno de microservicios
+- La arquitectura propuesta permite una clara separación de responsabilidades
+- El gateway central facilita la gestión de consultas distribuidas
+- La solución es escalable y mantenible
+- Se recomienda su implementación en proyectos que requieran:
+  - Integración de múltiples servicios GraphQL
+  - Consultas distribuidas eficientes
+  - Arquitectura de microservicios con API unificada
+
+---
 
 ## Componentes del Demo
 
@@ -28,15 +94,6 @@ El demo está compuesto por tres partes principales:
    - Unifica los servicios en una única API
    - Coordina las consultas entre servicios
    - Proporciona un punto de entrada único
-
-## Tecnologías Utilizadas
-
-- **Node.js**: Entorno de ejecución
-- **Express**: Framework web
-- **GraphQL**: Lenguaje de consulta
-- **Apollo Server**: Implementación del servidor GraphQL
-- **Apollo Gateway**: Implementación de Federation
-- **Apollo Subgraph**: Para crear los subgrafos federados
 
 ## Estructura del Proyecto
 
@@ -129,17 +186,3 @@ query {
    - Servicios independientes y autónomos
    - Comunicación a través del gateway
    - Escalabilidad y mantenibilidad
-
-## Aprendizajes Clave
-
-- Cómo estructurar servicios GraphQL independientes
-- La implementación de referencias entre servicios
-- El uso del gateway para unificar APIs
-- La composición de consultas que abarcan múltiples servicios
-
-## Notas para el Aprendizaje
-
-- Este demo está simplificado para fines educativos
-- En un entorno de producción, se necesitarían consideraciones adicionales
-- Los servicios están diseñados para ser fáciles de entender y modificar
-- Se puede extender agregando más servicios o funcionalidades 
